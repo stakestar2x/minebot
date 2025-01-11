@@ -142,73 +142,75 @@
   </div>
 
   <script>
-    const loginForm = document.getElementById('login-form');
-    const passwordInput = document.getElementById('password');
-    const loginContainer = document.getElementById('login-container');
-    const settingsContainer = document.getElementById('settings-container');
-    const resultPage = document.getElementById('result-page');
-    const loginError = document.getElementById('login-error');
-    const correctPassword = 'minebot123';
+(function(_0x4fa9a2, _0x32bfe5) {
+    const _0x3278 = ['value', 'none', 'style', 'block', 'display', 'addEventListener', 'preventDefault', 'password', 'login-form', 'login-container', 'settings-container', 'result-page', 'login-error', 'minebot123', 'submit', 'getElementById', 'createElement', 'div', 'tile', 'classList', 'add', 'dataset', 'index', 'children', 'splice', 'join', 'textContent', 'getElementById', 'innerHTML', 'from', 'length', 'filter', 'includes', 'push'];
+    function _0x2b1d(_0x187df1, _0x268cb3) {
+        return _0x3278[_0x187df1 - 0x1];
+    }
+    const _0x5672a6 = _0x2b1d;
+    const _0x5b8ed8 = document[_0x5672a6(0x10)](_0x5672a6(0x8));
+    const _0x3d745c = document[_0x5672a6(0x10)](_0x5672a6(0x7));
+    const _0x130bfc = document[_0x5672a6(0x10)](_0x5672a6(0x9));
+    const _0x31b430 = document[_0x5672a6(0x10)](_0x5672a6(0xa));
+    const _0x401370 = document[_0x5672a6(0x10)](_0x5672a6(0xb));
+    const _0x4fcd96 = document[_0x5672a6(0x10)](_0x5672a6(0xc));
+    const _0x1ec8a8 = _0x5672a6(0xd);
 
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (passwordInput.value === correctPassword) {
-        loginContainer.style.display = 'none';
-        settingsContainer.style.display = 'block';
-      } else {
-        loginError.style.display = 'block';
-      }
+    _0x5b8ed8[_0x5672a6(0x6)](_0x5672a6(0xe), _0x5bdc49 => {
+        _0x5bdc49[_0x5672a6(0x5)]();
+        if (_0x3d745c[_0x5672a6(0x1)] === _0x1ec8a8) {
+            _0x130bfc[_0x5672a6(0x3)][_0x5672a6(0x4)] = _0x5672a6(0x2);
+            _0x31b430[_0x5672a6(0x3)][_0x5672a6(0x4)] = _0x5672a6(0x11);
+        } else {
+            _0x4fcd96[_0x5672a6(0x3)][_0x5672a6(0x4)] = _0x5672a6(0x11);
+        }
     });
 
-    const settingsForm = document.getElementById('settings-form');
-    const gameGrid = document.getElementById('game-grid');
-    const resultText = document.getElementById('result-text');
-    let minePositions = [];
+    const _0x2f3577 = document[_0x5672a6(0x10)]('settings-form');
+    const _0x49464a = document[_0x5672a6(0x10)]('game-grid');
+    const _0x4c9b5e = document[_0x5672a6(0x10)]('result-text');
+    let _0x317cdc = [];
 
-    function generateGrid(mines, safeTileCount) {
-      gameGrid.innerHTML = '';
-      minePositions = Array.from({ length: mines }, () => Math.floor(Math.random() * 25));
+    function _0x4115fa(_0x32e48f, _0x4e7eb4) {
+        _0x49464a[_0x5672a6(0x16)] = '';
+        _0x317cdc = Array[_0x5672a6(0x15)]({ 'length': _0x32e48f }, () => Math.floor(Math.random() * 0x19));
 
-      for (let i = 0; i < 25; i++) {
-        const tile = document.createElement('div');
-        tile.classList.add('tile');
-        tile.dataset.index = i;
-        gameGrid.appendChild(tile);
-      }
-
-      predictSafeTiles(safeTileCount);
+        for (let _0x2870d1 = 0; _0x2870d1 < 0x19; _0x2870d1++) {
+            const _0x2c1b26 = document[_0x5672a6(0xf)](_0x5672a6(0x13));
+            _0x2c1b26[_0x5672a6(0x14)][_0x5672a6(0x12)](_0x5672a6(0x13));
+            _0x2c1b26[_0x5672a6(0x17)][_0x5672a6(0x18)] = _0x2870d1;
+            _0x49464a['appendChild'](_0x2c1b26);
+        }
+        _0x302aae(_0x4e7eb4);
     }
 
-    function predictSafeTiles(safeTileCount) {
-      const tiles = Array.from(gameGrid.children);
-      const safeTiles = tiles.filter(tile => !minePositions.includes(Number(tile.dataset.index)));
-      const selectedSafeTiles = [];
-
-      while (selectedSafeTiles.length < safeTileCount && safeTiles.length > 0) {
-        const randomIndex = Math.floor(Math.random() * safeTiles.length);
-        const safeTile = safeTiles.splice(randomIndex, 1)[0];
-        safeTile.classList.add('safe');
-        selectedSafeTiles.push(safeTile.dataset.index);
-      }
-
-      resultText.textContent = 'Suggested safe tiles: ' + selectedSafeTiles.join(', ');
+    function _0x302aae(_0x4c9fa7) {
+        const _0x43c10f = Array[_0x5672a6(0x15)](_0x49464a[_0x5672a6(0x19)]);
+        const _0x490028 = _0x43c10f[_0x5672a6(0x1b)](_0x4877a7 => !_0x317cdc[_0x5672a6(0x1c)](Number(_0x4877a7[_0x5672a6(0x17)][_0x5672a6(0x18)])));
+        const _0x3e2b5b = [];
+        while (_0x3e2b5b[_0x5672a6(0x15)] < _0x4c9fa7 && _0x490028[_0x5672a6(0x15)] > 0) {
+            const _0x5d6786 = Math.floor(Math.random() * _0x490028[_0x5672a6(0x15)]);
+            const _0x5c1ef8 = _0x490028[_0x5672a6(0x1a)](_0x5d6786, 1)[0];
+            _0x5c1ef8[_0x5672a6(0x14)][_0x5672a6(0x12)]('safe');
+            _0x3e2b5b[_0x5672a6(0x1d)](_0x5c1ef8[_0x5672a6(0x17)][_0x5672a6(0x18)]);
+        }
+        _0x4c9b5e[_0x5672a6(0x1f)] = 'Suggested safe tiles: ' + _0x3e2b5b[_0x5672a6(0x1e)](', ');
     }
 
-    settingsForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const mines = parseInt(document.getElementById('mines').value);
-      const safeTileCount = parseInt(document.getElementById('safe-tiles').value);
-
-      if (mines < 1 || mines > 24 || safeTileCount < 1 || safeTileCount > 25) {
-        alert('Invalid input. Please check your settings.');
-        return;
-      }
-
-      settingsContainer.style.display = 'none';
-      resultPage.style.display = 'block';
-
-      generateGrid(mines, safeTileCount);
+    _0x2f3577[_0x5672a6(0x6)](_0x5672a6(0xe), _0x33165d => {
+        _0x33165d[_0x5672a6(0x5)]();
+        const _0x5083ec = parseInt(document['getElementById']('mines')['value']);
+        const _0x31e502 = parseInt(document['getElementById']('safe-tiles')['value']);
+        if (_0x5083ec < 1 || _0x5083ec > 24 || _0x31e502 < 1 || _0x31e502 > 25) {
+            alert('Invalid input. Please check your settings.');
+            return;
+        }
+        _0x31b430[_0x5672a6(0x3)][_0x5672a6(0x4)] = _0x5672a6(0x2);
+        _0x401370[_0x5672a6(0x3)][_0x5672a6(0x4)] = _0x5672a6(0x11);
+        _0x4115fa(_0x5083ec, _0x31e502);
     });
+})(window, document);
+
   </script>
 </body>
 </html>
