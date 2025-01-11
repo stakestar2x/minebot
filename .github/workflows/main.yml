@@ -25,3 +25,4 @@ jobs:
         env:
           PASSWORD: ${{ secrets.PASSWORD }}
         run: node your-script.js
+
