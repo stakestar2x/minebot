@@ -56,18 +56,23 @@
       <button type="submit">Login</button>
     </form>
     <p id="login-error" style="color: red; display: none;">Incorrect Password. Try Again.</p>
+    <br>
+    <br>
+    <br>
+    For login please contact <a href="https://www.instagram.com/stakestar2x/" target="_blank" style="color: #E1306C; text-decoration: none;">@stakestar2x</a>
+
   </div>
 
   <script>
     const loginForm = document.getElementById('login-form');
     const passwordInput = document.getElementById('password');
     const loginError = document.getElementById('login-error');
-    const correctPassword = 'minebot123';
+    const security = 'oxAf76o';
 
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (passwordInput.value === correctPassword) {
-        window.location.href = 'game.html'; // Redirect to the gameplay page
+      if (passwordInput.value === security) {
+        window.location.href =  'https://stakestar2x.github.io/minebot-game/'; // Redirect to the gameplay page
       } else {
         loginError.style.display = 'block';
       }
